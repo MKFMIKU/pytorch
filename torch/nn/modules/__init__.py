@@ -50,7 +50,7 @@ __all__ = [
     'LSTMCell', 'GRUCell', 'PixelShuffle', 'Upsample', 'UpsamplingNearest2d', 'UpsamplingBilinear2d',
     'PairwiseDistance', 'AdaptiveMaxPool1d', 'AdaptiveMaxPool2d', 'AdaptiveMaxPool3d', 'AdaptiveAvgPool1d',
     'AdaptiveAvgPool2d', 'AdaptiveAvgPool3d', 'TripletMarginLoss', 'ZeroPad2d', 'ConstantPad1d', 'ConstantPad2d',
-    'ConstantPad3d', 'Bilinear', 'CosineSimilarity', 'Unfold', 'Fold', 'SSIMLoss', 'MultiScaleSSIMLoss'
+    'ConstantPad3d', 'Bilinear', 'CosineSimilarity', 'Unfold', 'Fold', 'SSIMLoss', 'MultiScaleSSIMLoss',
     'AdaptiveLogSoftmaxWithLoss', 'TransformerEncoder', 'TransformerDecoder', 
     'TransformerEncoderLayer', 'TransformerDecoderLayer', 'Transformer',
 ]
