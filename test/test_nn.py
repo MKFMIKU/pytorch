@@ -6439,6 +6439,11 @@ class TestNN(NNTestCase):
         loss = nn.SSIMLoss(reduction='none')(input, target, max_val=1.)
         m = loss > 1
         self.assertEqual(m.sum(), 0)
+        if TEST_CUDA:
+            target_cuda = target.cuda()
+            input_cuda = input.cuda()
+            loss_cuda = nn.SSIMLoss(reduction='none')(input_cuda, target_cuda, max_val=1.)
+            self.assertEqual(loss_cuda.cpu(), loss)
 
     def test_ms_ssim_loss_always_le_one(self):
         target = torch.rand(3, 3, 256, 256)
@@ -6446,6 +6451,11 @@ class TestNN(NNTestCase):
         loss = nn.MultiScaleSSIMLoss(reduction='none')(input, target, max_val=1.)
         m = loss > 1
         self.assertEqual(m.sum(), 0)
+        if TEST_CUDA:
+            target_cuda = target.cuda()
+            input_cuda = input.cuda()
+            loss_cuda = nn.MultiScaleSSIMLoss(reduction='none')(input_cuda, target_cuda, max_val=1.)
+            self.assertEqual(loss_cuda.cpu(), loss)
 
     def test_ssim_symmetry(self):
         target = torch.rand(3, 3, 256, 256)
